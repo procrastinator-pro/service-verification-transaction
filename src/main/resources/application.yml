@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: service-verification-transaction
+  datasource:
+    username: 'root'
+    url: jdbc:postgresql://localhost:5432/cards
+    password: 'root'
+    jps:
+      properties:
+        hibernate: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
+  cloud:
+    config:
+      enabled: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+      hibernate.type.descriptor.sql.BasicBinder: TRACE
